@@ -1183,4 +1183,4 @@ client.on('ready', () => { //code bot not leave room voice //Bot Is Online
     });
   
   
-client.login('BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
