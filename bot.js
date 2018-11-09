@@ -1198,7 +1198,7 @@ if (!message.content.startsWith(prefix)) return;
 		let reason = message.content.split(" ").slice(2).join(" ");
 		const muteembed = new Discord.RichEmbed()
 		.setColor("RANDOM")
-		.setAuthor(`Muted!`, user.displayAvatarURL)
+		.setAuthor(`Warned!`, user.displayAvatarURL)
 		.setThumbnail(user.displayAvatarURL)
 		.addField("**:busts_in_silhouette:  المستخدم**",  '**[ ' + `${user.tag}` + ' ]**',true)
 		.addField("**:hammer:  تم بواسطة **", '**[ ' + `${message.author.tag}` + ' ]**',true)
