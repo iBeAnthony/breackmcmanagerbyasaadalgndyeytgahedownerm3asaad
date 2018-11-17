@@ -1219,5 +1219,29 @@ ${message.author.tag}  بواسطة
   }
   });
 
+
+
+
+client.on('message', message =>{
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let prefix = '-';
+
+if(cmd === `${prefix}تقديم`) {
+    var suggestMessage = message.content.substring(8)
+    let suggest = new Discord.RichEmbed()
+    .setColor(3447003)
+    .setTitle("تقديم جديد")
+    .setDescription(`**${suggestMessage}**`)
+    .setFooter(` تم التقديم بواسطة : ${message.author.tag}`);
+    message.delete().catch(O_o=>{}) 
+    let suggests = message.guild.channels.find(`name`, "التقديمات");
+    if (!suggests) return message.channel.send("You should make A **التقديمات** channel!")
+    suggests.send(suggest);
+}
+
+});
+
   
 client.login(process.env.BOT_TOKEN);
